@@ -1,43 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Movie VS Book</title>
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-  <h1>MOVIE VS BOOK</h1>
-  <img src="lonely.jpg" alt="">
-    <p>Books will be changed once a week!</p>
-  <h2>DO YOU PERFER IT AS A BOOK OR MOVIE?</h2>
+  <h1>WONDERFUL WORLD OF HARRY POTTER</h1>
+  <h2>DO YOU PERFER THE SERIES AS A BOOK OR MOVIE?</h2>
+  <p>Write your review below!</p>
+
+  <!--- MOVIES ----------------------------------->
+  <section>
+    <h2>Movies</h2>
+    <img src="hpMovie.jpg">
+    <span action="average" class="average movies">
+      <%= Math.round((movies.length / (movies.length + books.length) ) * 100) / 100 * 100 + '%' %> </span>
+    <i class="fas fa-film"></i>
+
+    <h3>Reviews</h3>
+    <ul class="comments">
+      <% for(var i=0; i<movies.length; i++) {%>
+      <li class="comment">
+        <span>
+          <%= movies[i].name %></span>
+        <span>
+          <%= movies[i].msg %></span>
+        <span>
+          <%= movies[i].thumbUp %></span>
+        <span><i class="fas fa-thumbs-up" aria-hidden="true"></i></span>
+        <span>
+          <%= movies[i].thumbDown %></span>
+        <span><i class="fas fa-thumbs-down" aria-hidden="true"></i></span>
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      </li>
+      <% } %>
+    </ul>
+    <h2>Add a Review</h2>
+
+    <form action="/comments" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="comment" name="msg">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!--- BOOKS ----------------------------------->
+
+  <section>
+    <h2>Books</h2>
+    <img src="hpBook.jpg" >
+    <span action="average" class="average books">
+      <%= Math.round((books.length / (movies.length + books.length) ) * 100) / 100 * 100 + '%' %> </span>
+    <i class="fas fa-book-reader"></i>
+
+    <h3>Reviews</h3>
+    <ul class="reviews">
+      <% for(var j=0; j<books.length; j++) {%>
+      <li class="review">
+        <span>
+          <%= books[j].books %></span>
+        <span>
+          <%= books[j].rvw %></span>
+        <span>
+          <%= books[j].thumbUpB %></span>
+        <span><i class="fas fa-thumbs-up bookUp" aria-hidden="true"></i></span>
+        <span>
+          <%= books[j].thumbDownB %></span>
+        <span><i class="fas fa-thumbs-down bookDown" aria-hidden="true"></i></span>
+        <span><i class="fa fa-trash bookTrash" aria-hidden="true"></i></span>
+      </li>
+      <% } %>
+    </ul>
+    <h2>Add a Review</h2>
+
+    <form action="/reviews" method="POST">
+      <input type="text" placeholder="name" name="books">
+      <input type="text" placeholder="review" name="rvw">
+      <button type="submit">Submit</button>
+    </form>
+
+  </section>
 
 
-  <h3>Comments</h3>
-  <ul class="comments">
-  <% for(var i=0; i<comments.length; i++) {%>
-    <li class="message">
-      <span><%= comments[i].name %></span>
-      <span><%= comments[i].msg %></span>
-      <span><%= comments[i].thumbUp %></span>
-      <span><i class="fas fa-thumbs-up"aria-hidden="true"></i></span>
-      <span><%= comments[i].thumbDown %></span>
-      <span><i class="fas fa-thumbs-down" aria-hidden="true"></i></span>
-      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-    </li>
-  <% } %>
-  </ul>
+<!--- CHARACTER ----->
 
-  <h2>Add a comment</h2>
+  <section>
+    <h2 id="name"></h2>
+    <img id="hp" src="" alt="">
+  </section>
 
-  <form action="/comments" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="message" name="msg">
-    <button type="submit">Submit</button>
-  </form>
-
-  <script src="main.js"></script>
+  <script src="character.js"></script>
+  <script src="book.js"></script>
+  <script src="movies.js"></script>
 
 </body>
+
 </html>

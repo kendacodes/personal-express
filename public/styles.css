@@ -1,9 +1,30 @@
 body{
-  background: white;
-  color:black;
+  background-image: url("hogwarts.gif");
+  background-size: cover;
+  color:white;
   text-align: center;
   text-decoration: none;
 }
 h3{
   margin-top: 40px;
+}
+img{
+  width: 100%;
+  height:210px;
+}
+li{
+  list-style: none;
+}
+section{
+  width: 25%;
+  left: 500px;
+  padding: 30px;
+  margin: 20px;
+  /* background-color: #f6f6f5; */
+  display: inline-block;
+  background: #0e0e0e99;
+  box-shadow: -3px 3px 4px rgba(236,230,230,1);
+  border-radius: 3px;
+  line-height: 30px;
+  float: left;
 }
