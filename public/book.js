@@ -9,7 +9,7 @@ Array.from(thumbUpB).forEach(function(element) {
       element.addEventListener('click', function(){
         const books = this.parentNode.parentNode.childNodes[1].innerText
         const rvw = this.parentNode.parentNode.childNodes[3].innerText
-        const thumbUpB = parseFloat(this.parentNode.parentNode.childNodes[7].innerText)
+        const thumbUpB = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
 
         fetch('reviews', {
           method: 'put',
