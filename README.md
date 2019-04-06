@@ -1,7 +1,7 @@
 #Harry Potter Movie Series Vs the Book Series
 
 
-![alt](public/harrypotter.jpg)
+![alt](public/harrypotter.png)
 =======
 
 
