@@ -1,4 +1,3 @@
 Food-Terest
 
-![alt!](public/entree.jpg)
-
+![alt!](public/harrypotter.jpg)
