@@ -1,10 +1,10 @@
-var movieUp = document.getElementsByClassName("fa-thumbs-up");
-var MovieDown = document.getElementsByClassName("fa-thumbs-down");
-var movieTrash = document.getElementsByClassName("fa-trash");
+var thumbUp = document.getElementsByClassName("movieUp");
+var thumbDown = document.getElementsByClassName("movieDown");
+var trash = document.getElementsByClassName("movieTrash");
 
 // MOVIES========>
 
-Array.from(movieUp).forEach(function(element) {
+Array.from(thumbUp).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
@@ -27,7 +27,7 @@ Array.from(movieUp).forEach(function(element) {
         })
       });
 });
-Array.from(movieDown).forEach(function(element) {
+Array.from(thumbDown).forEach(function(element) {
       element.addEventListener('click', function(){
         const name =
          this.parentNode.parentNode.childNodes[1].innerText
@@ -54,7 +54,7 @@ Array.from(movieDown).forEach(function(element) {
       });
 });
 
-Array.from(movieTrash).forEach(function(element) {
+Array.from(trash).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
